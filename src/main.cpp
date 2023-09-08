@@ -1,12 +1,20 @@
-#include <config.h>
-
+#include <functions.h>
     #ifdef ESP32_ENABLED
         void setup() {
-
+            Serial2.begin(115200);
+            ConnectWiFi();
+            client.setServer(MQTT_SERVER, MQTT_PORT);
         }
 
         void loop() {
-; 
+            if (WiFi.status() != WL_CONNECTED)
+                ConnectWiFi();
+            if (!client.connected())
+                reconnect();
+            if(Serial2.available()){
+                String payload = Serial2.readString();
+                client.publish(MQTT_TOPIC, payload.c_str());
+            }
         }
     #endif
     #ifdef ARDUINO_MEGA_ENABLED

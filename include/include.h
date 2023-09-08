@@ -3,7 +3,8 @@
     #include <ArduinoJson.h>
     #include <Arduino.h>
     #ifdef ESP32_ENABLED
-
+        #include <WiFi.h>
+        #include <PubSubClient.h>
     #endif
     #ifdef ARDUINO_MEGA_ENABLED
         #include <Wire.h> 

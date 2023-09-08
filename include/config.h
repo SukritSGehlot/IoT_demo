@@ -2,7 +2,13 @@
 #define CONFIG_H
     #include <include.h>
     #ifdef ESP32_ENABLED
-
+        #define ssid "your SSID"   
+        #define password "Your Password" 
+        #define MQTT_SERVER "Your MQTT broker ip" 
+        #define MQTT_PORT 1883 
+        #define MQTT_TOPIC "your MQTT topic" 
+        WiFiClient espClient;
+        PubSubClient client(espClient);
     #endif
 
     #ifdef ARDUINO_MEGA_ENABLED
