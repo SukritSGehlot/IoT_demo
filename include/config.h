@@ -18,7 +18,6 @@
         #define CS  10
         #define trig 5
         #define echo 6
-
         PT100 pt100(CS, SDI,SDO, CLK);
         HCSR04 ultra_sonic(trig,echo);
     #endif

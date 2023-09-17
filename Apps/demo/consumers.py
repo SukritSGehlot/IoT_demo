@@ -15,9 +15,9 @@ class MyMqttConsumer(MqttConsumer):
         # print('Received a message at topic:', mqtt_message['topic'])
         print('With payload', mqtt_message['payload'])
         # print('And QOS:', mqtt_message['qos'])
-        # data=json.loads(mqtt_message['payload'])
-        # await sync_to_async(DistanceData.objects.create)(value=data['distance'])
-        # await sync_to_async(TemperatureData.objects.create)(value=data['temprature'])
+        data=json.loads(mqtt_message['payload'])
+        await sync_to_async(DistanceData.objects.create)(value=data['distance'])
+        await sync_to_async(TemperatureData.objects.create)(value=data['temprature'])
         
 
     async def disconnect(self):
