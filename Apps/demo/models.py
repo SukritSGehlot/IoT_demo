@@ -9,7 +9,7 @@ class CommonTimePicker(models.Model):
         abstract = True
 
 class TemperatureData(CommonTimePicker):
-    value = models.DecimalField("Temperature", max_digits=5, decimal_places=2,)
+    value = models.DecimalField("Temperature", max_digits=5, decimal_places=2)
 
 class DistanceData(CommonTimePicker):
-    value = models.DecimalField("Distance", max_digits=5, decimal_places=2, )
+    value = models.DecimalField("Distance", max_digits=5, decimal_places=2)

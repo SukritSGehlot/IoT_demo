@@ -22,6 +22,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-h4b3^acjt9avo7j1w*%1(um%xob#f-!&ln-m*^3ybc=#k8su-t'
 
+
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -127,3 +129,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MQTT_BROKER_HOST = '127.0.0.1'
 MQTT_BROKER_PORT = 1883  # Default MQTT port
+
+DJANGO_ALLOW_ASYNC_UNSAFE=True
